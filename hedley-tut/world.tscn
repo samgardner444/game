@@ -1,17 +1,46 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://b80eg2flyix62"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://b80eg2flyix62"]
+>>>>>>> 0b446c467457565aec4d0cec24495a4b9ae9ea0d
 
 [ext_resource type="PackedScene" uid="uid://chsw8fvf0tll7" path="res://charecter.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://b3c33dk5smsyv" path="res://world.gd" id="1_tlwt5"]
 [ext_resource type="Script" uid="uid://kkmq4xpyv4si" path="res://charecter.gd" id="2_fj7yv"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_tlwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_tlwt5")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_tlwt5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aqk2v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.129432, 0.858742, -0.495792, -1.49013e-08, 0.499998, 0.866027, 0.991588, -0.112092, 0.0647159, 1.47757, 5.00741, 3.65396)
+shadow_enabled = true
 
 [node name="platform" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70874, -0.392578, -4.15089)
 use_collision = true
 size = Vector3(14.2192, 0.214844, 23.9345)
 
+[node name="platform" type="CSGBox3D" parent="platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1952, 2.00327, 4.19435)
+use_collision = true
+size = Vector3(5.5847, 3.52747, 3.85869)
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.766334, -0.283439, -3.32897)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58545, -0.283439, -6.52507)
 script = ExtResource("2_fj7yv")
