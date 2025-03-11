@@ -7,10 +7,11 @@
 [node name="CharacterBody3D" type="CharacterBody3D"]
 
 [node name="mixamo_base" parent="." instance=ExtResource("1_bmvj6")]
+transform = Transform3D(-0.999997, 0, 0.00232139, 0, 1, 0, -0.00232139, 0, -0.999997, -0.375089, 0, 0.166768)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00353, 0)
+transform = Transform3D(-0.999997, 0, 0.00232139, 0, 1, 0, -0.00232139, 0, -0.999997, -0.375089, 1.00353, 0.166768)
 shape = SubResource("CylinderShape3D_aagv4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.994174, 0, 0.107791, 0, 1, 0, -0.107791, 0, -0.994174, -0.566644, 1.67221, -1.62086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.346902, 1.66578, -0.704981)
